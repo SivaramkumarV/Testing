@@ -30,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("Image/Peakpx.jpg"),
+                  image: AssetImage("images/Loginpageimage.png"),
                   fit: BoxFit.cover,
                 ),
               ),
