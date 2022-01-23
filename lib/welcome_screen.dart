@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:login_2/drawer.dart';
 import 'package:login_2/forgot_password.dart';
+import 'package:login_2/home_page.dart';
 import 'package:login_2/personal_info.dart';
 import 'package:login_2/registration_screen.dart';
 
@@ -14,7 +16,7 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
-  static const id = 'welcome_screen';
+
   bool isHiddenPassword = true;
   void passwordview() {
     setState(() {
@@ -101,7 +103,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                         ),
                                         FlatButton(
                                             color: Colors.black,
-                                            onPressed: () {Navigator.pushNamed(context,Personalinfo.id);},
+                                            onPressed: () {Navigator.pushNamed(context,Homepage.id);},
                                             child: Text(
                                               'Login',
                                               style: TextStyle(
