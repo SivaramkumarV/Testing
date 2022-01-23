@@ -2,12 +2,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(Personalinfo());
+
 
 class Personalinfo extends StatefulWidget {
   const Personalinfo({Key? key}) : super(key: key);
 
   @override
+   static const id = 'personal_info';
   _PersonalinfoState createState() => _PersonalinfoState();
 }
 
@@ -34,7 +35,7 @@ class _PersonalinfoState extends State<Personalinfo> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image(
-                image: AssetImage('images/waves.png'),
+                image: AssetImage('assets/images/waves.png'),
                 width: double.infinity,
               ),
               CircleAvatar(

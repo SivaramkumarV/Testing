@@ -1,18 +1,20 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
 import 'package:login_2/forgot_password.dart';
+import 'package:login_2/personal_info.dart';
 import 'package:login_2/registration_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
-  static const id='welcome_screen';
+  static const id = 'welcome_screen';
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
-  static const id='welcome_screen';
+  static const id = 'welcome_screen';
   bool isHiddenPassword = true;
   void passwordview() {
     setState(() {
@@ -30,7 +32,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/Loginpageimage.png"),
+                  image: AssetImage("assets/images/Loginpageimage.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -60,7 +62,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             children: [
                               Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                                 child: TextFormField(
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -80,8 +82,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                       children: [
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 15, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 15, 0, 0),
                                           child: TextFormField(
                                             obscureText: isHiddenPassword,
                                             decoration: InputDecoration(
@@ -99,32 +101,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                         ),
                                         FlatButton(
                                             color: Colors.black,
-                                            onPressed: () {},
+                                            onPressed: () {Navigator.pushNamed(context,Personalinfo.id);},
                                             child: Text(
                                               'Login',
                                               style: TextStyle(
                                                   color: Colors.white),
-                                            )
-                                        ),
+                                            )),
                                         FlatButton(
                                             color: Colors.black,
                                             onPressed: () {
-                                              Navigator.pushNamed(context, RegistrationScreen.id);
+                                              Navigator.pushNamed(context,
+                                                  RegistrationScreen.id);
                                             },
                                             child: Text(
                                               'Register',
                                               style: TextStyle(
                                                   color: Colors.white),
-                                            )
-                                        ),
-                                        TextButton(onPressed:(){
-                                          Navigator.pushNamed(context, ForgotPassword.id);
-                                        }, child: Text(
-                                          'Forgot Password?',
-                                          style: TextStyle(
-                                            color: Colors.blue,
+                                            )),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pushNamed(
+                                                context, ForgotPassword.id);
+                                          },
+                                          child: Text(
+                                            'Forgot Password?',
+                                            style: TextStyle(
+                                              color: Colors.blue,
+                                            ),
                                           ),
-                                        ),
                                         )
                                       ],
                                     ),
