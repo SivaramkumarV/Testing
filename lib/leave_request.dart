@@ -387,7 +387,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
           Align(
             alignment: AlignmentDirectional(0, -1),
             child: Image.asset(
-              'images/waves2x.png',
+              'assets/images/waves2x.png',
               width: double.infinity,
               fit: BoxFit.cover,
             ),

@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:login_2/drawer.dart';
-import 'package:login_2/home_page.dart';
+import 'package:login_2/drawer_screen.dart';
+import 'package:login_2/homepage.dart';
+
 
 class Personalinfo extends StatefulWidget {
   const Personalinfo({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _PersonalinfoState extends State<Personalinfo> {
         backgroundColor: Color(0xFFFEAD1F),
         elevation: 0,
       ),
-      drawer: Drwr(),
+      drawer: DrwrScreen(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

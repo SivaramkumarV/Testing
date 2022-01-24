@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_2/drawer.dart';
-import 'package:login_2/home_page.dart';
+import 'package:login_2/drawer_screen.dart';
+import 'package:login_2/homepage.dart';
 
 void main() => runApp(Attendance()
 
@@ -23,7 +23,7 @@ class Attendance extends StatelessWidget {
         title: Text('Attendance'),
 
       ),
-      drawer: Drwr(),
+      drawer: DrwrScreen(),
     );
 
   }
