@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_2/drawer_screen.dart';
+import 'package:login_2/leave_request.dart';
 import 'package:login_2/registration_screen.dart';
 import 'welcome_screen.dart';
 import 'forgot_password.dart';
@@ -15,11 +17,13 @@ class login extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.black54),
         ),
       ),
-      initialRoute:WelcomeScreen.id ,
+      initialRoute:LeaveRequestWidget.id ,
       routes:{
         WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id:(context) => RegistrationScreen(),
         ForgotPassword.id:(context) => ForgotPassword(),
+        LeaveRequestWidget.id:(context)=>LeaveRequestWidget(),
+        DrwrScreen.id:(context) => DrwrScreen(),
 
 
       },
