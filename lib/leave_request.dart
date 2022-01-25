@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 class LeaveRequestWidget extends StatefulWidget {
   static const id='leave_request';
 
+  LeaveRequestWidget({Key? key}) : super(key: key);
+
   @override
   _LeaveRequestWidgetState createState() => _LeaveRequestWidgetState();
 }
@@ -62,7 +64,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
         elevation: 0,
       ),
       backgroundColor: Color(0xFFE2D59A),
-      drawer: DrwrScreen(),
+      drawer: Drwr(),
       body:
       Stack(
         children: [

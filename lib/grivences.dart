@@ -1,15 +1,18 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
 
-void main() => runApp(Attendance()
+
+
+void main() => runApp(Grivence()
 
 );
-class Attendance extends StatelessWidget {
-  const Attendance({Key? key}) : super(key: key);
+class Grivence extends StatelessWidget {
+  const Grivence({Key? key}) : super(key: key);
 
+  static const id = 'grivences';
   @override
-  static const id = 'Attendance';
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
@@ -20,10 +23,10 @@ class Attendance extends StatelessWidget {
               },
               icon: Icon(Icons.home))
         ],
-        title: Text('Attendance'),
+        title: Text('Grivences'),
 
       ),
-      drawer: DrwrScreen(),
+      drawer: Drwr(),
     );
 
   }

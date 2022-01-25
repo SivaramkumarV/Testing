@@ -7,9 +7,9 @@ import 'package:login_2/homepage.dart';
 
 class Personalinfo extends StatefulWidget {
   const Personalinfo({Key? key}) : super(key: key);
-
-  @override
   static const id = 'personal_info';
+  @override
+
   _PersonalinfoState createState() => _PersonalinfoState();
 }
 
@@ -35,7 +35,7 @@ class _PersonalinfoState extends State<Personalinfo> {
         backgroundColor: Color(0xFFFEAD1F),
         elevation: 0,
       ),
-      drawer: DrwrScreen(),
+      drawer: Drwr(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
