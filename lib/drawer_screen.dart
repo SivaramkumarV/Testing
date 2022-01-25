@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_2/grievances.dart';
+import 'package:login_2/personal_info.dart';
 import 'welcome_screen.dart';
 import 'leave_request.dart';
 class DrwrScreen extends StatefulWidget {
@@ -39,7 +41,7 @@ class _DrwrScreenState extends State<DrwrScreen> {
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
-                  'images/sung-jin-woo-solo-leveling-uhdpaper.com-4K-7.1072-wp.thumbnail.jpg',
+                  'assets/images/sung-jin-woo-solo-leveling-uhdpaper.com-4K-7.1072-wp.thumbnail.jpg',
                 ),
               ),
               Padding(
@@ -93,7 +95,7 @@ class _DrwrScreenState extends State<DrwrScreen> {
                   onTap: () async {
                     await Navigator.pushNamed(
                       context,
-                      WelcomeScreen.id,
+                      Personalinfo.id,
 
                     );
                   },
@@ -142,7 +144,7 @@ class _DrwrScreenState extends State<DrwrScreen> {
                   onTap: () async {
                     await Navigator.pushNamed(
                       context,
-                      WelcomeScreen.id,
+                      GrievancesWidget.id,
                     );
                   },
                   child: ListTile(
