@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:login_2/attendance.dart';
-import 'package:login_2/grivences.dart';
+import 'package:login_2/grievances.dart';
+
 import 'package:login_2/leave_request.dart';
 import 'package:login_2/personal_info.dart';
 
@@ -77,7 +78,7 @@ class _DrwrState extends State<Drwr> {
               child: TextButton(
                 child: Text('GRIVENCES',style: TextStyle(color: Colors.white),),
                 onPressed: () {
-                  Navigator.pushNamed(context, Grivence.id);
+                  Navigator.pushNamed(context, GrievancesWidget.id);
                 },
               ),
             ),

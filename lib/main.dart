@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:login_2/grivences.dart';
+import 'package:login_2/grievances.dart';
+
 
 import 'package:login_2/homepage.dart';
 import 'package:login_2/leave_request.dart';
@@ -34,7 +35,7 @@ class Login extends StatelessWidget {
           Personalinfo.id: (context) => Personalinfo(),
           Attendance.id: (context) => Attendance(),
           Homepage.id: (context) => Homepage(),
-          Grivence.id:(context)=> Grivence(),
+          GrievancesWidget.id:(context)=> GrievancesWidget(),
         });
   }
 }

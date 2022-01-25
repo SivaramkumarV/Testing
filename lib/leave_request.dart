@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_2/drawer_screen.dart';
+import 'package:login_2/homepage.dart';
 import 'package:login_2/welcome_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 class LeaveRequestWidget extends StatefulWidget {
@@ -54,9 +55,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
               size: 21,
             ),
             onPressed: () async {
-              await Navigator.pushNamed(
-                context,WelcomeScreen.id,
-                );
+              await Navigator.pushNamed(context, Homepage.id);
             },
           ),
         ],
@@ -242,7 +241,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                    return AlertDialog(title: Text('REQUEST SENT!'),
                       actions: [
                         TextButton(
-                          onPressed: () => Navigator.pop(alertDialogContext),
+                          onPressed: () => Navigator.pushNamed(context, Homepage.id),
                           child: Text('Ok'),
                         ),
                       ],

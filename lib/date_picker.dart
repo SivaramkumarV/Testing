@@ -9,11 +9,11 @@ class Datepicker extends StatefulWidget {
 }
 
 class _DatepickerState extends State<Datepicker> {
-  @override
   String date = 'Pick Date';
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Color(0xFFFEAD1F)),
+      style: ElevatedButton.styleFrom(primary: const Color(0xFFFEAD1F)),
         onPressed: () async {
           DateTime? _newdate = await showDatePicker(
               context: context,
