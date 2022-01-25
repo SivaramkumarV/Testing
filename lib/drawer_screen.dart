@@ -39,7 +39,7 @@ class _DrwrScreenState extends State<DrwrScreen> {
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
-                  'images/sung-jin-woo-solo-leveling-uhdpaper.com-4K-7.1072-wp.thumbnail.jpg',
+                  'assets/images/sung-jin-woo-solo-leveling-uhdpaper.com-4K-7.1072-wp.thumbnail.jpg',
                 ),
               ),
               Padding(
