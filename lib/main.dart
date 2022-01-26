@@ -1,38 +1,41 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-
-import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/grievances.dart';
+
+
+import 'package:login_2/homepage.dart';
 import 'package:login_2/leave_request.dart';
-import 'package:login_2/Attendance.dart';
-import 'package:login_2/leave_request.dart';
+import 'package:login_2/attendance.dart';
+
 import 'package:login_2/personal_info.dart';
 import 'package:login_2/registration_screen.dart';
 import 'welcome_screen.dart';
 import 'forgot_password.dart';
 
-void main() => runApp(login());
+void main() => runApp(Login());
 
-class login extends StatelessWidget {
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        canvasColor: Colors.yellow,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.black54),
+        theme: ThemeData(
+          canvasColor: Color(0xffddccb6),
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.black54),
+          ),
         ),
-      ),
-      initialRoute:GrievancesWidget.id ,
-      routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-        ForgotPassword.id: (context) => ForgotPassword(),
-        LeaveRequestWidget.id: (context) => LeaveRequestWidget(),
-        DrwrScreen.id: (context) => DrwrScreen(),
-        GrievancesWidget.id:(context) => GrievancesWidget(),
-      }
-
-    );
-
+        initialRoute: WelcomeScreen.id,
+        routes: {
+          WelcomeScreen.id: (context) => WelcomeScreen(),
+          RegistrationScreen.id: (context) => RegistrationScreen(),
+          ForgotPassword.id: (context) => ForgotPassword(),
+          LeaveRequestWidget.id: (context) => LeaveRequestWidget(),
+          Personalinfo.id: (context) => Personalinfo(),
+          Attendance.id: (context) => Attendance(),
+          Homepage.id: (context) => Homepage(),
+          GrievancesWidget.id:(context)=> GrievancesWidget(),
+        });
   }
 }

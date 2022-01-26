@@ -59,7 +59,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
         elevation: 0,
       ),
       backgroundColor: Color(0xFFE2D59A),
-      drawer: DrwrScreen(),
+      drawer: Drwr(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -365,8 +365,3 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
     );
   }
 }
-
-
-
-
-

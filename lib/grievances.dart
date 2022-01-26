@@ -51,7 +51,7 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
         elevation: 0,
       ),
       backgroundColor: Color(0xFFE2D59A),
-      drawer: DrwrScreen(),
+      drawer: Drwr(),
 
       body: SafeArea(
           child: Stack(

@@ -1,168 +1,88 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:login_2/attendance.dart';
 import 'package:login_2/grievances.dart';
+
+import 'package:login_2/leave_request.dart';
 import 'package:login_2/personal_info.dart';
-import 'welcome_screen.dart';
-import 'leave_request.dart';
-class DrwrScreen extends StatefulWidget {
+
+
+class Drwr extends StatefulWidget {
+  const Drwr({Key? key}) : super(key: key);
+
   @override
-  static const id='drawer_screen';
-  _DrwrScreenState createState() => _DrwrScreenState();
+  static const id = 'drawer';
+  _DrwrState createState() => _DrwrState();
 }
 
-
-class _DrwrScreenState extends State<DrwrScreen> {
+class _DrwrState extends State<Drwr> {
   @override
+  String name = 'KRISHNA MOORTHY';
   Widget build(BuildContext context) {
     return Container(
       child: Drawer(
         elevation: 16,
-        child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Color(0xFFE2D59A),
-          ),
-          child: ListView(
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.vertical,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Color(0xFFE2D59A),
-                ),
-              ),
-              Container(
-                width: 120,
-                height: 120,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Image.asset(
-                  'assets/images/sung-jin-woo-solo-leveling-uhdpaper.com-4K-7.1072-wp.thumbnail.jpg',
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: Text(
-                  'Rashiv Mathesh',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    color: Colors.black,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              margin: EdgeInsets.zero,
+              decoration: BoxDecoration(color: Color(0xFFFEAD1F)),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/images/avatar.png'),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: Text(
-                  '9884143781',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: InkWell(
-                  onTap: () async {
-                    await Navigator.pushNamed(
-                      context,
-                      WelcomeScreen.id,
-                    );
-                  },
-                  child: ListTile(
-                    title: Text(
-                      'Personal Info',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      child: Center(child: Text('$name',style: TextStyle(color: Colors.white),)),
                     ),
-                    tileColor: Colors.black,
-                    dense: false,
+                    color: Color(0xFFFEAD1F),
                   ),
-                ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: InkWell(
-                  onTap: () async {
-                    await Navigator.pushNamed(
-                      context,
-                      Personalinfo.id,
-
-                    );
-                  },
-                  child: ListTile(
-                    title: Text(
-                      'Attendance',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                ),
+            ),
+            Container(
+              color: Color(0xffddccb6),
+              child: TextButton(
+                child: Text('PERSONAL INFO',style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  Navigator.pushNamed(context, Personalinfo.id);
+                },
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: InkWell(
-                  onTap: () async {
-                    await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LeaveRequestWidget(),
-                      ),
-                    );
-                  },
-                  child: ListTile(
-                    title: Text(
-                      'Leave Request',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                ),
+            ),
+            Container(
+              color: Color(0xffddccb6),
+              child: TextButton(
+                child: Text('ATTENDANCE',style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  Navigator.pushNamed(context, Attendance.id);
+                },
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: InkWell(
-                  onTap: () async {
-                    await Navigator.pushNamed(
-                      context,
-                      GrievancesWidget.id,
-                    );
-                  },
-                  child: ListTile(
-                    title: Text(
-                      'Grievences',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.black,
-                        fontSize: 22,
-                      ),
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                ),
+            ),
+            Container(
+              color: Color(0xffddccb6),
+              child: TextButton(
+                child: Text('LEAVE REQUEST',style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  Navigator.pushNamed(context, LeaveRequestWidget.id);
+                },
               ),
-            ],
-          ),
+            ),
+            Container(
+              color: Color(0xffddccb6),
+              child: TextButton(
+                child: Text('GRIVENCES',style: TextStyle(color: Colors.white),),
+                onPressed: () {
+                  Navigator.pushNamed(context, GrievancesWidget.id);
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
