@@ -15,7 +15,7 @@ class Homepage extends StatefulWidget {
 
   static const id = 'homepage';
 
-  const Homepage({Key? key}) : super(key: key);
+
   @override
   State<Homepage> createState() => _HomepageState();
 }

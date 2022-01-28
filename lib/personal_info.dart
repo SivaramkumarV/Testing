@@ -6,7 +6,6 @@ import 'package:login_2/homepage.dart';
 
 
 class Personalinfo extends StatefulWidget {
-  const Personalinfo({Key? key}) : super(key: key);
   static const id = 'personal_info';
   @override
 

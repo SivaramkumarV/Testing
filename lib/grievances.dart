@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:login_2/chat.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
 
@@ -117,10 +117,15 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
               ),
               Align(
                 alignment: AlignmentDirectional(0.96, 0.85),
-                child: RaisedButton(
+                child:
+                FloatingActionButton.extended(
+                  icon: Icon(Icons.chat),
+                  label: Text("Chat!"),
+                  tooltip: 'Connect To Assistant',
                   onPressed: () {
-                    print('Button pressed ...');
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>Chat() ));
                   },
+
 
                 ),
               ),

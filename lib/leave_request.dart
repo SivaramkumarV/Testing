@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 class LeaveRequestWidget extends StatefulWidget {
   static const id='leave_request';
 
@@ -13,6 +14,11 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
   var textController2;
   var textController3;
   var textController4;
+  String selectedValue;
+  List<String> items = [
+    'Casual',
+    'Sick',
+  ];
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -108,7 +114,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 hintText: 'DD/MM/YY',
-                                hintStyle: TextStyle(color: Colors.grey),
+                                hintStyle: TextStyle(color: Theme
+                                    .of(context)
+                                    .hintColor),
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -165,7 +173,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'DD/MM/YY',
-                              hintStyle: TextStyle(color: Colors.grey),
+                              hintStyle: TextStyle(color:Theme
+                                  .of(context)
+                                  .hintColor),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -202,7 +212,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(75, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                       child: Text(
                         'No.of Days:',
                         textAlign: TextAlign.center,
@@ -236,7 +246,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Days',
-                              hintStyle: TextStyle(color: Colors.grey),
+                              hintStyle: TextStyle(color: Theme
+                                  .of(context)
+                                  .hintColor),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -257,6 +269,61 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           ),
                         ),
                       ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                      child: Material(
+                        color: Colors.transparent,
+                        elevation: 8,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          width: 130,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton2(
+                                hint: Text(
+                                  'Select',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Theme
+                                        .of(context)
+                                        .hintColor,
+                                  ),
+                                ),
+                                items: items
+                                    .map((item) =>
+                                    DropdownMenuItem<String>(
+                                      value: item,
+                                      child: Text(
+                                        item,
+                                        style: const TextStyle(
+                                          fontSize: 17,
+                                        ),
+                                      ),
+                                    ))
+                                    .toList(),
+                                value: selectedValue,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedValue = value as String;
+                                  });
+                                },
+                                buttonHeight: 40,
+                                buttonWidth: 140,
+                                itemHeight: 40,
+                              ),
+                          ),
+                        ),
+                      ),
+                    ),
                     ),
                   ],
                 ),
@@ -299,7 +366,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Enter the Subject here...',
-                            hintStyle: TextStyle(color: Colors.grey),
+                            hintStyle: TextStyle(color: Theme
+                                .of(context)
+                                .hintColor),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),

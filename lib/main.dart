@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:login_2/chat.dart';
 import 'package:login_2/grievances.dart';
 
 
@@ -15,7 +16,7 @@ import 'forgot_password.dart';
 void main() => runApp(Login());
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,7 @@ class Login extends StatelessWidget {
           Attendance.id: (context) => Attendance(),
           Homepage.id: (context) => Homepage(),
           GrievancesWidget.id:(context)=> GrievancesWidget(),
+          Chat.id:(context)=> Chat(),
         });
   }
 }

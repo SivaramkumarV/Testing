@@ -8,7 +8,7 @@ import 'package:login_2/personal_info.dart';
 
 
 class Drwr extends StatefulWidget {
-  const Drwr({Key? key}) : super(key: key);
+
 
   @override
   static const id = 'drawer';

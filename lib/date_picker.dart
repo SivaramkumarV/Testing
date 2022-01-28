@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class Datepicker extends StatefulWidget {
-  const Datepicker({Key? key}) : super(key: key);
+  Datepicker({Key key}) : super(key: key);
 
   @override
   _DatepickerState createState() => _DatepickerState();
@@ -15,7 +15,7 @@ class _DatepickerState extends State<Datepicker> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(primary: const Color(0xFFFEAD1F)),
         onPressed: () async {
-          DateTime? _newdate = await showDatePicker(
+          DateTime _newdate = await showDatePicker(
               context: context,
               initialDate: DateTime.now(),
               firstDate: DateTime(1990),

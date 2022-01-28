@@ -8,7 +8,7 @@ import 'homepage.dart';
 void main() => runApp(Attendance());
 
 class Attendance extends StatefulWidget {
-  const Attendance({Key? key}) : super(key: key);
+
 
   static const id = 'attendance';
   @override
@@ -65,7 +65,7 @@ class _AttendanceState extends State<Attendance> {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 20),
                             child: Row(
-                              children: const [
+                              children:  [
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
                                   child: Text('DATE :'),
@@ -113,9 +113,9 @@ class _AttendanceState extends State<Attendance> {
                                         color: Colors.black,
                                         fontWeight: FontWeight.normal),
                                     value: dropdownValue,
-                                    onChanged: (String? newValue) {
+                                    onChanged: (String newValue) {
                                       setState(() {
-                                        dropdownValue = newValue!;
+                                        dropdownValue = newValue;
                                       });
                                     },
                                     items: <String>[

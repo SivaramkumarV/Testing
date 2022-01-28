@@ -4,7 +4,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 
 class Bargraph extends StatefulWidget {
-  Bargraph({Key? key }) : super(key: key);
+
 
 
 
@@ -13,8 +13,8 @@ class Bargraph extends StatefulWidget {
 }
 
 class _BargraphState extends State<Bargraph> {
-  late List<Monthlyattendance> _chartData;
-  late TooltipBehavior _tooltipBehavior;
+   List<Monthlyattendance> _chartData;
+   TooltipBehavior _tooltipBehavior;
 
   @override
   void initState() {
