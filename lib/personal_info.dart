@@ -22,7 +22,7 @@ class _PersonalinfoState extends State<Personalinfo> {
     String mob = '+91 90000 09999';
     String email = 'user123@gmail.com';
     return Scaffold(
-      backgroundColor: Color(0xffddccb6),
+      backgroundColor: Color(0xfff5f5f5),
       appBar: AppBar(
         actions: [
           IconButton(
@@ -60,11 +60,11 @@ class _PersonalinfoState extends State<Personalinfo> {
                 child: Text(
                   'NAME : $name\nD.O.B : $dob\nBLOOD TYPE : $bldtype\nD.O.J : $doj',
                   style: TextStyle(
-                      height: 2, fontSize: 20, fontWeight: FontWeight.bold),
+                      height: 2, fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
               elevation: 8,
-              color: Color(0xffddccb6),
+              color: Color(0xfff5f5f5),
             ),
             Card(
               shape: RoundedRectangleBorder(
@@ -76,11 +76,11 @@ class _PersonalinfoState extends State<Personalinfo> {
                 child: Text(
                   'MOBILE : $mob\nEMAIL :$email',
                   style: TextStyle(
-                      height: 2, fontSize: 20, fontWeight: FontWeight.bold),
+                      height: 2, fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
               elevation: 8,
-              color: Color(0xffddccb6),
+              color: Color(0xfff5f5f5),
             )
           ],
         ),

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:login_2/Attendance.dart';
+import 'package:login_2/attendance.dart';
 import 'package:login_2/drawer_screen.dart';
 import'package:login_2/personal_info.dart';
 import 'package:login_2/welcome_screen.dart';
@@ -30,9 +30,14 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-        backgroundColor: Colors.white70,
+        backgroundColor: Color(0xfff5f5f5),
         drawer: Drwr(),
         appBar: AppBar(
+          actions: [IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, WelcomeScreen.id);
+              },
+              icon: Icon(Icons.logout))],
           elevation: 0,
           backgroundColor: Color(0xFFFEAD1F),
           automaticallyImplyLeading: true,
@@ -52,7 +57,7 @@ class _HomepageState extends State<Homepage> {
                   children: const [
                     Text('Monthly Calendar',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -73,7 +78,7 @@ class _HomepageState extends State<Homepage> {
                   children: const [
                     Text('Attendance Pie Chart',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
