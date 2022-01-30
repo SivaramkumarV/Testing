@@ -87,7 +87,7 @@ class _DrwrState extends State<Drwr> {
               color:Color(0xfff5f5f5),
               child: TextButton(
                 child: Text(
-                  'GRIVENCES',
+                  'GRIEVANCES',
                   style: TextStyle(fontSize:18,color: Colors.black),
                 ),
                 onPressed: () {
