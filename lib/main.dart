@@ -16,15 +16,17 @@ import 'forgot_password.dart';
 void main() => runApp(Login());
 
 class Login extends StatelessWidget {
+  const Login({Key key}) : super(key: key);
+
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          canvasColor: Color(0xffddccb6),
+          canvasColor: Color(0xfff5f5f5),
           textTheme: TextTheme(
-            bodyText1: TextStyle(color: Colors.black54),
+            bodyText1: TextStyle(fontFamily:'Opensans',color: Colors.black54),
           ),
         ),
         initialRoute: WelcomeScreen.id,

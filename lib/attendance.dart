@@ -20,7 +20,7 @@ class _AttendanceState extends State<Attendance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffddccb6),
+      backgroundColor: Color(0xfff5f5f5),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFFFEAD1F),
@@ -68,7 +68,7 @@ class _AttendanceState extends State<Attendance> {
                               children:  [
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
-                                  child: Text('DATE :'),
+                                  child: Text('DATE :',style: TextStyle(fontSize: 16),),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -89,12 +89,12 @@ class _AttendanceState extends State<Attendance> {
                                 'ENTRY TIME : 8.00 AM\n EXIT TIME : 2.00 PM\n NO.OF.HOURS : 6 hrs',
                                 style: TextStyle(
                                     height: 2,
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                             elevation: 8,
-                            color: Color(0xffddccb6),
+                            color:Color(0xfff5f5f5),
                           ),
                         ],
                       ),
@@ -162,12 +162,12 @@ class _AttendanceState extends State<Attendance> {
                                   'NO.OF.DAYS ATTENDED : 25\nNO.OF.LEAVES : 1\nTOTAL NO.OF.HOURS : 225 HRS\nPERCENTAGE : 96%',
                                   style: TextStyle(
                                       height: 2,
-                                      fontSize: 20,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
                               elevation: 8,
-                              color: Color(0xffddccb6),
+                              color: Color(0xfff5f5f5),
                             ),
                           ],
                         ),

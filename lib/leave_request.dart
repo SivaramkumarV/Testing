@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_2/date_picker.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -64,7 +65,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFFE2D59A),
+      backgroundColor: Color(0xfff5f5f5),
       drawer: Drwr(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -95,57 +96,11 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
-                        child: Material(
-                          color: Colors.transparent,
-                          elevation: 8,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Container(
-                            width: 100,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFEEEEEE),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: TextFormField(
-                              controller: textController1,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: 'DD/MM/YY',
-                                hintStyle: TextStyle(color: Theme
-                                    .of(context)
-                                    .hintColor),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1,
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4.0),
-                                    topRight: Radius.circular(4.0),
-                                  ),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1,
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4.0),
-                                    topRight: Radius.circular(4.0),
-                                  ),
-                                ),
-                              ),
-                              style: TextStyle(color: Colors.black),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
+                        padding: const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                        child: Datepicker(),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                         child: Text(
                           'TO:',
                           style: TextStyle(
@@ -155,52 +110,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           ),
                         ),
                       ),
-                      Material(
-                        color: Colors.transparent,
-                        elevation: 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Container(
-                          width: 100,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: TextFormField(
-                            controller: textController2,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'DD/MM/YY',
-                              hintStyle: TextStyle(color:Theme
-                                  .of(context)
-                                  .hintColor),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style: TextStyle(color: Colors.black),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                        child: Datepicker(),
                       ),
                     ],
                   ),
@@ -235,7 +147,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: Color(0xfff5f5f5),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: TextFormField(
@@ -355,7 +267,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                         width: 350,
                         height: 150,
                         decoration: BoxDecoration(
-                          color: Color(0xFFEEEEEE),
+                          color: Color(0xfff5f5f5),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: TextFormField(

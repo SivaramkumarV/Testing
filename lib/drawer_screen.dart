@@ -6,10 +6,7 @@ import 'package:login_2/grievances.dart';
 import 'package:login_2/leave_request.dart';
 import 'package:login_2/personal_info.dart';
 
-
 class Drwr extends StatefulWidget {
-
-
   @override
   static const id = 'drawer';
   _DrwrState createState() => _DrwrState();
@@ -31,15 +28,19 @@ class _DrwrState extends State<Drwr> {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 40,
+                    radius: 35,
                     backgroundColor: Colors.white,
                     backgroundImage: AssetImage('assets/images/avatar.png'),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 5),
+
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Center(child: Text('$name',style: TextStyle(color: Colors.white),)),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Center(
+                          child: Text(
+                        '$name\n  +91 90000 90000',
+                        style: TextStyle(fontSize:16,color: Colors.white),
+                      )),
                     ),
                     color: Color(0xFFFEAD1F),
                   ),
@@ -47,36 +48,48 @@ class _DrwrState extends State<Drwr> {
               ),
             ),
             Container(
-              color: Color(0xffddccb6),
+              color: Color(0xfff5f5f5),
               child: TextButton(
-                child: Text('PERSONAL INFO',style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'PERSONAL INFO',
+                  style: TextStyle(fontSize:18,color: Colors.black),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, Personalinfo.id);
                 },
               ),
             ),
             Container(
-              color: Color(0xffddccb6),
+              color: Color(0xfff5f5f5),
               child: TextButton(
-                child: Text('ATTENDANCE',style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'ATTENDANCE',
+                  style: TextStyle(fontSize:18,color: Colors.black),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, Attendance.id);
                 },
               ),
             ),
             Container(
-              color: Color(0xffddccb6),
+              color: Color(0xfff5f5f5),
               child: TextButton(
-                child: Text('LEAVE REQUEST',style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'LEAVE REQUEST',
+                  style: TextStyle(fontSize:18,color: Colors.black),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, LeaveRequestWidget.id);
                 },
               ),
             ),
             Container(
-              color: Color(0xffddccb6),
+              color:Color(0xfff5f5f5),
               child: TextButton(
-                child: Text('GRIVENCES',style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'GRIEVANCES',
+                  style: TextStyle(fontSize:18,color: Colors.black),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, GrievancesWidget.id);
                 },

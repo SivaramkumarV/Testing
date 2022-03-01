@@ -50,7 +50,7 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
         centerTitle: true,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFFE2D59A),
+      backgroundColor: Color(0xfff5f5f5),
       drawer: Drwr(),
 
       body: SafeArea(
@@ -68,7 +68,7 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
                     width: 350,
                     height: 150,
                     decoration: BoxDecoration(
-                      color: Color(0xFFE2D59A),
+                      color: Color(0xfff5f5f5),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
@@ -97,7 +97,7 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
                     width: 350,
                     height: 150,
                     decoration: BoxDecoration(
-                      color: Color(0xFFE2D59A),
+                      color: Color(0xfff5f5f5),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
