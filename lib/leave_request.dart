@@ -3,8 +3,9 @@ import 'package:login_2/date_picker.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+
 class LeaveRequestWidget extends StatefulWidget {
-  static const id='leave_request';
+  static const id = 'leave_request';
 
   @override
   _LeaveRequestWidgetState createState() => _LeaveRequestWidgetState();
@@ -20,6 +21,11 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
     'Casual',
     'Sick',
   ];
+  bool firstvalue = false;
+  bool secondvalue = false;
+  bool thirdvalue = false;
+  var remainingdays = '7';
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -57,7 +63,8 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
             ),
             onPressed: () async {
               await Navigator.pushNamed(
-                context,Homepage.id,
+                context,
+                Homepage.id,
               );
             },
           ),
@@ -73,13 +80,14 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [Image.asset(
-              'assets/images/waves2x.png',
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            children: [
+              Image.asset(
+                'assets/images/waves2x.png',
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(30, 10, 10, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(45, 10, 10, 0),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -88,7 +96,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'FROM:',
+                        'From:',
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: 'Poppins',
@@ -96,13 +104,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
-                        child: Datepicker(),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
                         child: Text(
-                          'TO:',
+                          'To:',
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Poppins',
@@ -111,41 +115,42 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
-                        child: Datepicker(),
+                        padding: EdgeInsetsDirectional.fromSTEB(85, 0, 0, 0),
+                        child: Text(
+                          'No.of Days:',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 10),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Datepicker(),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-                      child: Text(
-                        'No.of Days:',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
+                      padding: EdgeInsetsDirectional.fromSTEB(45, 0, 0, 0),
+                      child: Datepicker(),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
                       child: Material(
                         color: Colors.transparent,
-                        elevation: 8,
+                        elevation: 3,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(18),
                         ),
                         child: Container(
-                          width: 50,
-                          height: 50,
+                          width: 80,
+                          height: 40,
                           decoration: BoxDecoration(
                             color: Color(0xfff5f5f5),
                             borderRadius: BorderRadius.circular(15),
@@ -157,10 +162,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                             controller: textController3,
                             obscureText: false,
                             decoration: InputDecoration(
-                              hintText: 'Days',
-                              hintStyle: TextStyle(color: Theme
-                                  .of(context)
-                                  .hintColor),
+                              hintText: 'days',
+                              hintStyle:
+                                  TextStyle(color: Theme.of(context).hintColor),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -182,68 +186,92 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                         ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 30, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text('Casual Leave',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.normal,
+                        )),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                      child: Material(
-                        color: Colors.transparent,
-                        elevation: 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Container(
-                          width: 130,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton2(
-                                hint: Text(
-                                  'Select',
-                                  style: TextStyle(
-                                    fontSize: 17,
-                                    color: Theme
-                                        .of(context)
-                                        .hintColor,
-                                  ),
-                                ),
-                                items: items
-                                    .map((item) =>
-                                    DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(
-                                        item,
-                                        style: const TextStyle(
-                                          fontSize: 17,
-                                        ),
-                                      ),
-                                    ))
-                                    .toList(),
-                                value: selectedValue,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedValue = value as String;
-                                  });
-                                },
-                                buttonHeight: 40,
-                                buttonWidth: 140,
-                                itemHeight: 40,
-                              ),
-                          ),
-                        ),
-                      ),
+                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                      child: Text('Sick Leave',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.normal,
+                          )),
                     ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                      child: Text('Compensatory Offer',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.normal,
+                          )),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 50, 0, 1),
+                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 10),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                      child: Checkbox(
+                        value: firstvalue,
+                        checkColor: Colors.white,
+                        activeColor: Colors.red,
+                        onChanged: (bool value1) {
+                          setState(() {
+                            firstvalue = value1;
+                          });
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
+                      child: Checkbox(
+                        value: secondvalue,
+                        checkColor: Colors.white,
+                        activeColor: Colors.green,
+                        onChanged: (bool value1) {
+                          setState(() {
+                            secondvalue = value1;
+                          });
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
+                      child: Checkbox(
+                        value: thirdvalue,
+                        checkColor: Colors.white,
+                        activeColor: Colors.blue,
+                        onChanged: (bool value1) {
+                          setState(() {
+                            thirdvalue = value1;
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 20, 0, 1),
                 child: Text(
-                  'SUBJECT:',
+                  'Reason For Leave:',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -278,9 +306,8 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: 'Enter the Subject here...',
-                            hintStyle: TextStyle(color: Theme
-                                .of(context)
-                                .hintColor),
+                            hintStyle:
+                                TextStyle(color: Theme.of(context).hintColor),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -302,7 +329,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                               ),
                             ),
                           ),
-                          style: TextStyle(color:Colors.black),
+                          style: TextStyle(color: Colors.black),
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -310,6 +337,46 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                   ],
                 ),
               ),
+              Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 15, 0),
+                  child: Row(
+                    children: [
+                      Text(
+                        "No.of Remaining Leaves:",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        child: Material(
+                          color: Colors.transparent,
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          child: Container(
+                            width: 80,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: Color(0xfff5f5f5),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                              child: Text("$remainingdays",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  )),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(100, 100, 100, 0),
                 child: RaisedButton(
@@ -322,21 +389,21 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           content: Text('Your Leave Request has been sent.'),
                           actions: [
                             TextButton(
-                              onPressed: () => Navigator.pop(alertDialogContext),
-                              child: Text('Ok'),
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('OK'),
                             ),
                           ],
                         );
                       },
                     );
-                    await Navigator.pushNamed(
-                        context,
-                        Homepage.id
-                    );
+                    await Navigator.pushNamed(context, Homepage.id);
                   },
-                  child: const Text ('SUBMIT',style: TextStyle(color: Colors.white),),
+                  child: const Text(
+                    'SUBMIT',
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.blueAccent,
-
                 ),
               ),
             ],
