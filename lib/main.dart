@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:login_2/chat.dart';
 import 'package:login_2/grievances.dart';
 
 
@@ -39,7 +38,6 @@ class Login extends StatelessWidget {
           Attendance.id: (context) => Attendance(),
           Homepage.id: (context) => Homepage(),
           GrievancesWidget.id:(context)=> GrievancesWidget(),
-          Chat.id:(context)=> Chat(),
         });
   }
 }
