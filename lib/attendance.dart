@@ -8,8 +8,6 @@ import 'homepage.dart';
 void main() => runApp(Attendance());
 
 class Attendance extends StatefulWidget {
-
-
   static const id = 'attendance';
   @override
   _AttendanceState createState() => _AttendanceState();
@@ -65,10 +63,13 @@ class _AttendanceState extends State<Attendance> {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 20),
                             child: Row(
-                              children:  [
+                              children: [
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
-                                  child: Text('DATE :',style: TextStyle(fontSize: 16),),
+                                  child: Text(
+                                    'DATE :',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20),
@@ -85,16 +86,27 @@ class _AttendanceState extends State<Attendance> {
                                 horizontal: 40, vertical: 20),
                             child: Padding(
                               padding: const EdgeInsets.all(20.0),
-                              child: Text(
-                                'ENTRY TIME : 8.00 AM\n EXIT TIME : 2.00 PM\n NO.OF.HOURS : 6 hrs',
-                                style: TextStyle(
-                                    height: 2,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'ENTRY TIME\n EXIT TIME\n NO.OF.HOURS',
+                                    style: TextStyle(
+                                        height: 2,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    ' : 8.00 A.M\n : 2.00 P.M\n : 6 HRS',
+                                    style: TextStyle(
+                                        height: 2,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
                               ),
                             ),
                             elevation: 8,
-                            color:Color(0xfff5f5f5),
+                            color: Color(0xfff5f5f5),
                           ),
                         ],
                       ),
@@ -158,12 +170,23 @@ class _AttendanceState extends State<Attendance> {
                                   horizontal: 40, vertical: 20),
                               child: Padding(
                                 padding: const EdgeInsets.all(20.0),
-                                child: Text(
-                                  'NO.OF.DAYS ATTENDED : 25\nNO.OF.LEAVES : 1\nTOTAL NO.OF.HOURS : 225 HRS\nPERCENTAGE : 96%',
-                                  style: TextStyle(
-                                      height: 2,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'NO.OF.DAYS ATTENDED\nNO.OF.LEAVES\nTOTAL NO.OF.HOURS\nPERCENTAGE',
+                                      style: TextStyle(
+                                          height: 2,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      ' : 25\n : 1\n : 225 HRS\n : 96%',
+                                      style: TextStyle(
+                                          height: 2,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
                                 ),
                               ),
                               elevation: 8,

@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:login_2/drawer_screen.dart';
 import 'package:login_2/homepage.dart';
 
-
 class Personalinfo extends StatefulWidget {
   static const id = 'personal_info';
   @override
-
   _PersonalinfoState createState() => _PersonalinfoState();
 }
 
@@ -21,6 +19,8 @@ class _PersonalinfoState extends State<Personalinfo> {
     String doj = '22-11-2021';
     String mob = '+91 90000 09999';
     String email = 'user123@gmail.com';
+    String empid = '1920478937';
+    String doq = '10-08-2002';
     return Scaffold(
       backgroundColor: Color(0xfff5f5f5),
       appBar: AppBar(
@@ -54,13 +54,22 @@ class _PersonalinfoState extends State<Personalinfo> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'NAME : $name\nD.O.B : $dob\nBLOOD TYPE : $bldtype\nD.O.J : $doj',
-                  style: TextStyle(
-                      height: 2, fontSize: 18, fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      'NAME\nD.O.B\nBLOOD\nD.O.J\nEMP ID\nD.O.Q',
+                      style: TextStyle(
+                          height: 2, fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' : $name\n : $dob\n : $bldtype\n : $doj\n : $empid\n : $doq',
+                      style: TextStyle(
+                          height: 2, fontSize: 18, fontWeight: FontWeight.w500),
+                    )
+                  ],
                 ),
               ),
               elevation: 8,
@@ -73,10 +82,19 @@ class _PersonalinfoState extends State<Personalinfo> {
               margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'MOBILE : $mob\nEMAIL :$email',
-                  style: TextStyle(
-                      height: 2, fontSize: 18, fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      'MOBILE\nEMAIL',
+                      style: TextStyle(
+                          height: 2, fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      ' : $mob\n : $email',
+                      style: TextStyle(
+                          height: 2, fontSize: 18, fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
               ),
               elevation: 8,
