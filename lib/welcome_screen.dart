@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:login_2/SignUP.dart';
 import 'package:login_2/forgot_password.dart';
 import 'package:login_2/homepage.dart';
 import 'package:login_2/personal_info.dart';
@@ -112,7 +112,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                             color: Colors.black,
                                             onPressed: () {
                                               Navigator.pushNamed(context,
-                                                  RegistrationScreen.id);
+                                                  SignUPWidget.id);
                                             },
                                             child: Text(
                                               'Register',

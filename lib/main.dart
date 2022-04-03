@@ -11,6 +11,7 @@ import 'package:login_2/personal_info.dart';
 import 'package:login_2/registration_screen.dart';
 import 'welcome_screen.dart';
 import 'forgot_password.dart';
+import 'SignUP.dart';
 
 void main() => runApp(Login());
 
@@ -38,6 +39,7 @@ class Login extends StatelessWidget {
           Attendance.id: (context) => Attendance(),
           Homepage.id: (context) => Homepage(),
           GrievancesWidget.id:(context)=> GrievancesWidget(),
+          SignUPWidget.id:(context) => SignUPWidget(),
         });
   }
 }

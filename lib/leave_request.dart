@@ -48,7 +48,7 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
           'LEAVE REQUEST',
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontFamily: 'Montserrat',
             fontSize: 20,
             fontWeight: FontWeight.w600,
