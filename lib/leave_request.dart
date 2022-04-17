@@ -25,6 +25,8 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
   bool secondvalue = false;
   bool thirdvalue = false;
   var remainingdays = '7';
+  String nodays;
+  String reason;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -156,6 +158,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: TextFormField(
+                            onChanged: (value){
+                              nodays=value;
+                            },
                             minLines: 1,
                             maxLines: 1,
                             keyboardType: TextInputType.multiline,
@@ -299,6 +304,9 @@ class _LeaveRequestWidgetState extends State<LeaveRequestWidget> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: TextFormField(
+                          onChanged: (value){
+                            reason=value;
+                          },
                           minLines: 1,
                           maxLines: 5,
                           keyboardType: TextInputType.multiline,

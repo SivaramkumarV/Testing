@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:login_2/grievances.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 import 'package:login_2/homepage.dart';
@@ -13,7 +15,10 @@ import 'welcome_screen.dart';
 import 'forgot_password.dart';
 import 'SignUP.dart';
 
-void main() => runApp(Login());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(Login());}
 
 class Login extends StatelessWidget {
   const Login({Key key}) : super(key: key);

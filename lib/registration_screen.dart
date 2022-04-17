@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_2/SignUP.dart';
+import 'package:login_2/welcome_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -10,6 +12,27 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFFFA726),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 21,
+            ),
+            onPressed: () async {
+              await Navigator.pushNamed(
+                context,
+                WelcomeScreen.id,
+              );
+            },
+          ),
+        ],
+        centerTitle: false,
+        elevation: 2,
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -77,7 +100,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 elevation: 5.0,
                 child: MaterialButton(
                   onPressed: () {
-                    //Implement registration functionality.
+                    Navigator.pushNamed(context, SignUPWidget.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,

@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:login_2/attendance.dart';
 import 'package:login_2/drawer_screen.dart';
@@ -21,11 +23,29 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _auth = FirebaseAuth.instance;
+  User loggedInUser;
   List<PieData> chartData = [
     PieData(25, 'present'),
     PieData(4, 'Late'),
     PieData(2, 'Leave'),
   ];
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+  void getCurrentUser() async{
+    try {
+      final user=await _auth.currentUser;
+      if(user!=null){
+        loggedInUser = user;
+        print(loggedInUser.email);
+      }}
+    catch(e){
+      print(e);
+        }
+  }
   @override
   Widget build(BuildContext context) {
     return
@@ -35,6 +55,7 @@ class _HomepageState extends State<Homepage> {
         appBar: AppBar(
           actions: [IconButton(
               onPressed: () {
+                _auth.signOut();
                 Navigator.pushNamed(context, WelcomeScreen.id);
               },
               icon: Icon(Icons.logout))],

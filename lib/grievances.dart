@@ -13,7 +13,8 @@ class GrievancesWidget extends StatefulWidget {
 
 class _GrievancesWidgetState extends State<GrievancesWidget> {
   var textController4;
-  String selectedValue;
+  String subject;
+  String selectedCategory;
   List<String> items = [
     'item1',
     'item2',
@@ -30,101 +31,106 @@ class _GrievancesWidgetState extends State<GrievancesWidget> {
             return AlertDialog(
               content: Form(
                   key: _formKey,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      TextFormField(
-                        controller: _textEditingController,
-                        validator: (value) {
-                          return value.isNotEmpty ? null : "Invalid Field";
-                        },
-                        decoration: InputDecoration(
-                            hintText: "*Subject",
-                            hintStyle: TextStyle(color: Colors.redAccent)),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text("Select Category"),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(15,15,15 ,15),
-                            child: CustomDropdownButton2(
-                                hint: 'Select Category',
-                                dropdownItems: items,
-                                value: selectedValue,
-                                onChanged: (value){
-                                  setState((){
-                                    selectedValue=value;
-                                  });
-                                }),
-                          ),
-                        ],
-                      ),
-                      Padding(padding: EdgeInsetsDirectional.zero,
-                        child: Row(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        TextFormField(
+                          controller: _textEditingController,
+                          validator: (value) {
+                            return value.isNotEmpty ? null : "Invalid Field";
+                          },
+                          decoration: InputDecoration(
+                              hintText: "*Subject",
+                              hintStyle: TextStyle(color: Colors.redAccent)),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("Details:")
+                            Text("Select Category"),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(15,15,15 ,15),
+                              child: CustomDropdownButton2(
+                                  hint: 'Select Category',
+                                  dropdownItems: items,
+                                  value: selectedCategory,
+                                  onChanged: (value){
+                                    setState((){
+                                      selectedCategory=value;
+                                    });
+                                  }),
+                            ),
                           ],
                         ),
+                        Padding(padding: EdgeInsetsDirectional.zero,
+                          child: Row(
+                            children: [
+                              Text("Details:")
+                            ],
+                          ),
 
-                      ),
-                      Padding(padding: EdgeInsetsDirectional.zero,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Material(
-                            color: Colors.transparent,
-                            elevation: 8,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Container(
-                              width: 230,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                color: Color(0xfff5f5f5),
+                        ),
+                        Padding(padding: EdgeInsetsDirectional.zero,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 8,
+                              shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
-                              child: TextFormField(
-                                minLines: 1,
-                                maxLines: 5,
-                                keyboardType: TextInputType.multiline,
-                                controller: textController4,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'Enter the Subject here...',
-                                  hintStyle:
-                                  TextStyle(color: Theme.of(context).hintColor),
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
+                              child: Container(
+                                width: 230,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                  color: Color(0xfff5f5f5),
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
-                                style: TextStyle(color: Colors.black),
-                                textAlign: TextAlign.start,
+                                child: TextFormField(
+                                  onChanged: (value){
+                                    subject=value;
+                                  },
+                                  minLines: 1,
+                                  maxLines: 5,
+                                  keyboardType: TextInputType.multiline,
+                                  controller: textController4,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    hintText: 'Enter the Subject here...',
+                                    hintStyle:
+                                    TextStyle(color: Theme.of(context).hintColor),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(4.0),
+                                        topRight: Radius.circular(4.0),
+                                      ),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(4.0),
+                                        topRight: Radius.circular(4.0),
+                                      ),
+                                    ),
+                                  ),
+                                  style: TextStyle(color: Colors.black),
+                                  textAlign: TextAlign.start,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      )
-                    ],
+                          ],
+                        ),
+                        )
+                      ],
+                    ),
                   )),
               actions: <Widget>[
                 TextButton(
